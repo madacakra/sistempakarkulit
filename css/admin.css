@@ -1,0 +1,192 @@
+/* File: css/admin.css */
+/* CSS khusus untuk Dashboard Admin dan halaman manajemen lainnya */
+
+/* General Body Styling for Admin Pages */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6; /* Latar belakang abu-abu yang nyaman */
+    margin: 0; /* Hapus margin default body */
+    padding: 0;
+}
+
+/* Fixed Navbar Adjustment */
+/* Karena navbar di admin dashboard juga fixed-top, body perlu padding-top */
+body.admin-body {
+    padding-top: 56px; /* Tinggi default navbar Bootstrap 5 */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh; /* Memenuhi tinggi viewport */
+    width: 250px;
+    position: fixed; /* Sidebar tetap pada posisinya */
+    top: 0;
+    left: 0;
+    background-color: #343a40; /* Dark background untuk sidebar */
+    color: white;
+    padding-top: 60px; /* Memberi ruang agar tidak tertutup navbar */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Bayangan di sisi kanan sidebar */
+    overflow-y: auto; /* Memungkinkan scroll jika konten sidebar panjang */
+    z-index: 1030; /* Pastikan di atas konten utama tapi di bawah navbar utama */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .navbar-brand {
+    padding-left: 20px; /* Padding untuk brand di sidebar jika ada */
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%; /* Pastikan item navigasi mengisi lebar sidebar */
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8); /* Warna link default */
+    padding: 15px 20px;
+    transition: all 0.3s ease; /* Transisi halus untuk hover/active */
+    display: flex; /* Untuk ikon sejajar dengan teks */
+    align-items: center;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px; /* Spasi antara ikon dan teks */
+    font-size: 1.1rem;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    color: white;
+    background-color: #007bff; /* Warna primary Bootstrap untuk active/hover */
+    border-left: 5px solid #ffc107; /* Highlight kuning untuk link aktif/hover */
+}
+
+.sidebar .nav-link.text-danger:hover {
+    background-color: #dc3545; /* Warna merah saat logout di-hover */
+    border-left-color: #dc3545;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px; /* Offset agar konten tidak tertutup sidebar */
+    padding: 20px;
+    min-height: calc(100vh - 56px); /* Pastikan konten mengisi sisa tinggi layar */
+    background-color: #f4f7f6;
+}
+
+/* Page Title Styling */
+.main-content h1 {
+    font-weight: 700;
+    color: #007bff; /* Warna primary Bootstrap */
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content h1 i {
+    font-size: 2.2rem;
+    margin-right: 15px;
+}
+
+/* Card Statistics Styling */
+.card-stats {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Bayangan untuk kartu */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+    cursor: pointer;
+    background-color: white;
+    height: 100%; /* Pastikan semua kartu dalam satu baris punya tinggi yang sama */
+}
+
+.card-stats:hover {
+    transform: translateY(-5px); /* Efek naik sedikit saat di-hover */
+}
+
+.card-stats .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Bentuk lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    margin-right: 15px;
+    /* Background colors will be set via Bootstrap's utility classes */
+}
+
+/* Light Background Colors for Cards (custom classes) */
+.bg-primary-light { background-color: #e6f0ff !important; color: #007bff !important; }
+.bg-success-light { background-color: #e6ffe6 !important; color: #28a745 !important; }
+.bg-info-light { background-color: #e0f7fa !important; color: #17a2b8 !important; }
+.bg-warning-light { background-color: #fff9e6 !important; color: #ffc107 !important; }
+.bg-danger-light { background-color: #ffe6e6 !important; color: #dc3545 !important; }
+
+/* Icon Circle Background Colors (standard Bootstrap classes) */
+.icon-circle.bg-primary { background-color: #007bff !important; }
+.icon-circle.bg-success { background-color: #28a745 !important; }
+.icon-circle.bg-info { background-color: #17a2b8 !important; }
+.icon-circle.bg-warning { background-color: #ffc107 !important; }
+.icon-circle.bg-danger { background-color: #dc3545 !important; }
+
+.card-stats .card-title {
+    font-weight: 600;
+    color: #495057; /* Warna teks judul kartu */
+    margin-bottom: 5px;
+}
+.card-stats .card-text {
+    font-size: 2rem; /* Ukuran font untuk angka statistik */
+    font-weight: 700;
+    color: #343a40; /* Warna teks angka statistik */
+}
+
+/* Card General Styling for Admin Content */
+.card-admin {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.card-admin .card-header {
+    background-color: #007bff; /* Header warna primary */
+    color: white;
+    font-weight: 600;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* Menjadi relatif agar tidak fixed di mobile */
+        padding-top: 0; /* Hapus padding-top */
+        box-shadow: none; /* Hapus shadow di mobile */
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .sidebar .nav-item {
+        border-bottom: 1px solid rgba(255,255,255,0.05); /* Pemisah antar menu di mobile */
+    }
+    .sidebar .nav-link {
+        justify-content: center; /* Pusat teks dan ikon di mobile */
+    }
+    .sidebar .nav-link i {
+        margin-right: 5px; /* Kurangi spasi ikon di mobile */
+    }
+    .main-content {
+        margin-left: 0; /* Hapus offset di mobile */
+        padding-top: 20px;
+    }
+    body.admin-body {
+        padding-top: 0; /* Hapus padding-top body jika sidebar tidak fixed */
+    }
+    .main-content h1 {
+        font-size: 1.8rem;
+    }
+    .card-stats .card-text {
+        font-size: 1.5rem;
+    }
+}

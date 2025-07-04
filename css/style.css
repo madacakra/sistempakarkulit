@@ -1,0 +1,245 @@
+/* Custom CSS untuk Sistem Pakar Diagnosa Penyakit Kulit */
+
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan Google Font Poppins */
+    background-color: #f8f9fa; /* Warna latar belakang abu-abu terang */
+    line-height: 1.6; /* Ketinggian baris untuk keterbacaan */
+    color: #343a40; /* Warna teks default */
+    padding-top: 56px; /* Padding untuk fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75); /* Warna link default */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white; /* Warna link saat hover */
+}
+
+.navbar-nav .nav-item .btn {
+    padding: 8px 15px;
+    border-radius: 50px; /* Tombol lebih rounded */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(rgba(0, 70, 150, 0.7), rgba(0, 123, 255, 0.7)), url('../img/background-kulit.jpg') no-repeat center center; /* Gradient overlay dengan gambar */
+    background-size: cover;
+    background-attachment: fixed; /* Efek parallax */
+    color: white;
+    padding: 120px 0; /* Padding atas dan bawah lebih besar */
+    text-align: center;
+    min-height: 650px; /* Tinggi minimum section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Pastikan tidak ada scroll horizontal dari animasi */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255,255,255,0.1), transparent 50%);
+    pointer-events: none;
+    animation: pulseBackground 10s infinite alternate; /* Animasi latar belakang */
+}
+
+@keyframes pulseBackground {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; /* Ukuran judul lebih besar */
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section p {
+    font-size: 1.35rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-section .btn {
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #343a40;
+}
+
+.hero-section .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Tentang Sistem Section */
+#tentang {
+    padding: 80px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#tentang img {
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+#tentang h2 {
+    color: #007bff;
+    font-size: 2.5rem;
+}
+
+/* Fitur Unggulan Section */
+#fitur {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+#fitur h2 {
+    color: #6c757d;
+    font-size: 2.5rem;
+}
+
+.card-feature {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    background-color: white;
+}
+
+.card-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.icon-feature {
+    font-size: 3.5rem; /* Ukuran ikon lebih besar */
+    color: #007bff; /* Warna ikon */
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.card-feature:hover .icon-feature {
+    color: #0056b3; /* Warna ikon berubah saat hover */
+}
+
+/* Call to Action Section */
+.custom-btn-cta {
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    color: #007bff !important; /* Override Bootstrap default */
+    border: 2px solid #ffffff;
+}
+
+.custom-btn-cta:hover {
+    background-color: transparent;
+    color: #ffffff !important;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #212529 !important; /* Darker footer */
+    color: rgba(255, 255, 255, 0.8);
+    padding: 40px 0;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .hero-section {
+        padding: 100px 0;
+        min-height: 550px;
+    }
+    #tentang, #fitur, .bg-primary {
+        padding: 60px 0;
+    }
+    .card-feature {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px; /* Sesuaikan padding-top jika navbar berubah tinggi */
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .hero-section .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-bottom: 15px; /* Spasi antar tombol di mobile */
+    }
+    .custom-btn-cta {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
